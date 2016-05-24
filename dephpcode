@@ -1,0 +1,26 @@
+<?php
+
+ if (isset($_POST['roll']))
+ {
+     $getal1 = $_POST['getal1'];
+     $getal2 = $_POST['getal2'];
+     if (!is_numeric($getal1) || !is_numeric($getal2))
+     {
+         exit("Je hebt geen getallen ingevoerd. Probeer het alstublieft opnieuw.");
+     }
+     else 
+     {
+         if ($getal1 < $getal2)
+         {
+             $rand = mt_rand($getal1, $getal2);
+             echo "Het willekeurig getal is: <b>".$rand."</b><br />";
+         }
+         else 
+         {
+             exit("Je begingetal is groter dan je eindgetal en dit mag jammer genoeg niet. Probeer het opnieuw.");
+         }
+     }
+ }
+ <?php echo isset($_POST['getal1']) ? $_POST['getal1'] : 1; ?>
+ <?php echo isset($_POST['getal2']) ? $_POST['getal2'] : 100; ?>
+?>
